@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+// ui
+import { Row, Col } from 'reactstrap';
 import './App.css';
 
 // component
@@ -63,12 +66,18 @@ class App extends Component {
         <div className="App">
           <Hello />
           <div className="router-list">
-            <Routes {...this.state} />
+            <Row>
+              <Col md="3">
+                <h2>Links</h2>
+                <Navigations  {...this.state} />
+              </Col>
+              <Col md="9">
+                <Routes {...this.state} />
+                <br />
+                <APIInfo {...this.state} />
+              </Col>
+            </Row>
             <br />
-            <APIInfo {...this.state} />
-            <br />
-            <h2>Links</h2>
-            <Navigations  {...this.state} />
           </div>
         </div>
       </Router>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const Navigations = ({navigationPaths}) => (
-  <ul>
+  <ListGroup style={{overflow: 'scroll', padding: '20px'}}>
     {navigationPaths.map((path, key) => {
-      return <li key={key}><Link to={path}>{path}</Link></li>
+      return <ListGroupItem key={key}><Link to={path}>{path}</Link></ListGroupItem>
     })}
-  </ul>
+  </ListGroup>
 )
 
 export default Navigations;
