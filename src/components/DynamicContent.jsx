@@ -2,13 +2,11 @@ import React from 'react';
 // ui
 import {
   Container,
-  Card,
-  CardBody,
-  CardTitle,
   Row,
-  Col,
 } from 'reactstrap';
 
+// component
+import DynamicForm from './DynamicForm';
 
 export default ({path, routes}) => {
   const route = routes[path]
@@ -17,20 +15,13 @@ export default ({path, routes}) => {
       <h2>Current page</h2>
       <h3>{path}</h3>
       <Row>
-        {Object.keys(route).map((method, key) => {
-          const item = route[method]
-          console.log(item)
-          return (
-            <Col key={key}>
-              <Card>
-                <CardBody>
-                  <CardTitle>Method: {method}</CardTitle>
-                  <p>{item.description}</p>
-                </CardBody>
-              </Card>
-            </Col>
-          )
-        })}
+        {Object.keys(route).map((method, key) => (
+          <DynamicForm
+            key={key}
+            method={method}
+            item={route[method]}
+          />
+        ))}
       </Row>
     </Container>
   )

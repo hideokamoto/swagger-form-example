@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // component

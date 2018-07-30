@@ -5,7 +5,6 @@ import {
   Col,
   Row,
   Card,
-  CardText,
   CardBody,
   CardTitle,
 } from 'reactstrap';
